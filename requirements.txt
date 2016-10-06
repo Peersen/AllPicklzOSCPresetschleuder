@@ -1,0 +1,4 @@
+Cython==0.22.1
+BiblioPixel==2.0.11
+BiblioPixelAnimations===85b3b390b9147976924387a7a9e96527a9452ab2
+pyliblo==0.10.0
