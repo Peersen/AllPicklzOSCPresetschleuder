@@ -71,7 +71,8 @@ def main():
     presets += [
         LarsonScanners.LarsonScanner(led, color=colors.BlueViolet, tail=20),
         LarsonScanners.LarsonRainbow(led, tail=50),
-        Rainbows.RainbowCycle(led)
+        Rainbows.RainbowCycle(led),
+        Rainbows.Rainbow(led)
     ]
 
     set_preset('', [0, 50], '', '')
