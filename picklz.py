@@ -54,7 +54,7 @@ def main():
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('--port', dest='port', default=7676,
                         help='Port to listen on')
-    parser.add_argument('--num-leds', dest='num_leds', default=139,
+    parser.add_argument('--num-leds', dest='num_leds', default=194,
                         help='Number of LEDs on strip')
     args = parser.parse_args()
 
@@ -65,7 +65,7 @@ def main():
     osc.add_method("/off", None, set_off)
     osc.add_method("/presets", None, set_preset)
 
-    driver = DriverSerial(type=LEDTYPE.WS2812B, num=args.num_leds, c_order=ChannelOrder.GRB)
+    driver = DriverSerial(type=LEDTYPE.WS2801, num=args.num_leds, c_order=ChannelOrder.GRB)
     led = LEDStrip(driver)
 
     presets += [
