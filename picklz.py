@@ -11,6 +11,12 @@ from bibliopixel.drivers.serial_driver import *
 
 from BiblioPixelAnimations.strip import LarsonScanners
 from BiblioPixelAnimations.strip import Rainbows
+from BiblioPixelAnimations.strip import PartyMode
+from BiblioPixelAnimations.strip import FireFlies
+from BiblioPixelAnimations.strip import WhiteTwinkle
+from BiblioPixelAnimations.strip import Wave
+from BiblioPixelAnimations.strip import ColorChase
+
 
 led = None
 current_anim = None
@@ -69,10 +75,14 @@ def main():
     led = LEDStrip(driver)
 
     presets += [
-        LarsonScanners.LarsonScanner(led, color=colors.BlueViolet, tail=20),
-        LarsonScanners.LarsonRainbow(led, tail=50),
-        Rainbows.RainbowCycle(led),
-        Rainbows.Rainbow(led)
+        LarsonScanners.LarsonScanner(led, color=colors.Cyan, tail=60),
+        LarsonScanners.LarsonRainbow(led, tail=60),
+        Rainbows.Rainbow(led),
+        PartyMode.PartyMode(led, [colors.White, colors.Blue]),
+        FireFlies.FireFlies(led, [colors.Gold, colors.Red], width=12, count=4),
+        WhiteTwinkle.WhiteTwinkle(led),
+        Wave.Wave(led, color=colors.Cyan, cycles=4),
+        ColorChase.ColorChase(led, color=colors.Cyan, width=20)
     ]
 
     set_preset('', [0, 50], '', '')
