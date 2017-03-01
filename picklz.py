@@ -71,7 +71,7 @@ def main():
     osc.add_method("/off", None, set_off)
     osc.add_method("/presets", None, set_preset)
 
-    driver = DriverSerial(type=LEDTYPE.WS2801, num=int(args.num_leds), c_order=ChannelOrder.GRB)
+    driver = DriverSerial(type=LEDTYPE.WS2801, num=int(args.num_leds), c_order=ChannelOrder.BGR)
     led = LEDStrip(driver)
 
     presets += [
